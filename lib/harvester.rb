@@ -11,7 +11,7 @@ module Harvester
   end
   
   # This is the method that starts the thing
-  def self.start
+  def self.start    
     if Harvester.has_login_data?
       Harvester.login
     end
@@ -19,9 +19,9 @@ module Harvester
   
   def self.login
     agent = Mechanize.new
-    agent.get(@universe)
+    agent.get(Harvester.configuration.universe_url)
     sleep 3
-    agent.post(@universe, 'login[name]' => Harvester.configuration.login, 'login[password]' => Harvester.configuration.password)
+    agent.post(Harvester.configuration.universe_url, 'login[name]' => Harvester.configuration.login, 'login[password]' => Harvester.configuration.password)
   end
     
 end

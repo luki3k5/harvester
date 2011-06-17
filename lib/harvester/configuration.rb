@@ -1,10 +1,10 @@
 class Harvester::Configuration
   
-  DEFAULT_SERVER = "u1.imperion.com"
+  DEFAULT_SERVER = "http://u1.imperion.com"
 
-  attr_accessor :login, :password
+  attr_accessor :login, :password, :universe_url
   
   def initialize
-    @base_url = DEFAULT_SERVER
+    @universe_url = DEFAULT_SERVER
   end
 end
