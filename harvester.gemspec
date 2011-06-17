@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.description = %q{This gem is to automate certain actions in imperion game}
 
   s.add_dependency('nokogiri')
+  s.add_dependency('mechanize')
   s.add_development_dependency "rspec" # this for development only and it will install rspec so we can write tests 
   
   s.rubyforge_project = "harvester"
