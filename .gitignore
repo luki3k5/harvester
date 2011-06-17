@@ -1,3 +1,5 @@
+.redcar
+.redcar/*
 *.gem
 .bundle
 Gemfile.lock
