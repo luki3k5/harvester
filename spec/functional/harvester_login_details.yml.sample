@@ -1,0 +1,7 @@
+# login - Your game login
+# password - Your in game password
+# species - Your race put [Titan]
+
+login: SET_YOUR_LOGIN
+password: SET_YOUR_PASSWORD
+species: YOUR_RACE
