@@ -1,7 +1,9 @@
+require "harvester/helper"
 require 'mechanize'
 require 'json'
 
 module Harvester
+  extend self
   
   # @return [Configuration] The configuration singleton.
   def self.configuration
@@ -30,8 +32,7 @@ module Harvester
   def self.login
     @agent = Mechanize.new
     @agent.user_agent_alias = 'Mac Safari' 
-    @agent.get(Harvester.configuration.universe_url)
-    sleep 3
+    @agent.get(Harvester.configuration.universe_url) and random_pause
     @agent.post(Harvester.configuration.universe_url, 'login[name]' => Harvester.configuration.login, 'login[password]' => Harvester.configuration.password)
   end
     
