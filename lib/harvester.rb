@@ -29,6 +29,18 @@ module Harvester
     JSON.parse(@agent.current_page.body[/var uiData.*;/][/[{].*[}]/]) 
   end
   
+  # Merthod obtain Map JSON feed with the central point of the currently selected planet (default main planet)
+  # 
+  #
+  def self.get_map_data
+    data = get_json_data
+    id_planet = data["current_planet"]["id_planet"]
+    id_system = data["current_planet"]["id_System"]    
+    
+    response = @agent.post("http://u1.imperion.com/map/index/preload/", 'planetId' => id_planet, 'systemId' => id_system)
+    JSON.parse(response)
+  end
+  
   def self.login
     @agent = Mechanize.new
     @agent.user_agent_alias = 'Mac Safari' 

@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
   s.summary     = %q{This gem is to automate certain actions in imperion game}
   s.description = %q{This gem is to automate certain actions in imperion game}
 
-  s.add_dependency('yaml')
   s.add_dependency('json')
   s.add_dependency('nokogiri')
   s.add_dependency('mechanize')
